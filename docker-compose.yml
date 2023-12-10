@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    user: postgres
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USERNAME=${DATABASE_USERNAME}
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
+  smtp:
+    restart: always
+    image: jcalonso/mailhog:latest
+    logging:
+      driver: "none"
+    ports:
+      - ${SMTP_PORT}:${SMTP_PORT}
+      - 8025:8025
