@@ -20,7 +20,13 @@ export default async function Dashboard() {
         </h1>
         <h2 className="flex-none">Welcome {session.user?.email}</h2>
         <div className="flex-auto mt-10">
-          <ul>
+          <ul className="space-y-4">
+            <li>
+              <a href="/billing">API Checks</a>
+            </li>
+            <li>
+              <a href="/billing">Incidents</a>
+            </li>
             <li>
               <a href="/billing">Billing</a>
             </li>
@@ -60,7 +66,7 @@ export default async function Dashboard() {
                 }
                 type="submit"
               >
-                Create check
+                Create API check
               </button>
             </div>
           </div>
@@ -97,13 +103,13 @@ export default async function Dashboard() {
                     Url
                   </th>
                   <th scope="col" className="px-6 py-3">
+                    Last checked
+                  </th>
+                  <th scope="col" className="px-6 py-3">
                     Status
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Uptime (Last 24 hours)
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Last checked
                   </th>
                   <th scope="col" className="px-6 py-3"></th>
                 </tr>
@@ -125,22 +131,33 @@ export default async function Dashboard() {
                       </label>
                     </div>
                   </td>
-                  <th
+                  <td
                     scope="row"
                     className="flex items-center px-6 py-4 text-gray-900 whitespace-nowra"
                   >
+                    <div>
+                      <Image
+                        src={"https://stripe.com/favicon.ico"}
+                        alt={"stripe logo"}
+                        width={20}
+                        height={20}
+                      ></Image>
+                    </div>
                     <div className="ps-3">
                       <div className="font-bold text-gray-900">
-                        Check google ever 5 seconds
+                        Check Stripe payment link ever 5 seconds
                       </div>
                       <div className="text-xs">
                         <LinkComponent
-                          url="www.google.com"
-                          text="https://www.google.com"
+                          url="https://www.stripe.com/payments"
+                          text="https://www.stripe.com/payments"
                         />
                       </div>
                     </div>
-                  </th>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p>{new Date().toISOString()}</p>
+                  </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
                       <div className="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>{" "}
@@ -174,9 +191,6 @@ export default async function Dashboard() {
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                     </ul>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p>{new Date().toISOString()}</p>
                   </td>
                   <td className="px-6 py-4">
                     <LinkComponent url="/edit" text="Edit" />
@@ -198,22 +212,33 @@ export default async function Dashboard() {
                       </label>
                     </div>
                   </td>
-                  <th
+                  <td
                     scope="row"
                     className="flex items-center px-6 py-4 text-gray-900 whitespace-nowra"
                   >
+                    <div>
+                      <Image
+                        src={"https://google.com/favicon.ico"}
+                        alt={"google logo"}
+                        width={20}
+                        height={20}
+                      ></Image>
+                    </div>
                     <div className="ps-3">
                       <div className="font-bold text-gray-900">
-                        Check google ever 5 seconds
+                        Ping google every 30 seconds
                       </div>
                       <div className="text-xs">
                         <LinkComponent
-                          url="www.google.com"
+                          url="https://www.google.com"
                           text="https://www.google.com"
                         />
                       </div>
                     </div>
-                  </th>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p>{new Date().toISOString()}</p>
+                  </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
                       <div className="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>{" "}
@@ -222,19 +247,19 @@ export default async function Dashboard() {
                   </td>
                   <td className="px-6 py-4">
                     <ul className="flex flex-row justify-evenly">
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
+                      <li className="bg-gray-400 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
@@ -247,9 +272,6 @@ export default async function Dashboard() {
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                     </ul>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p>{new Date().toISOString()}</p>
                   </td>
                   <td className="px-6 py-4">
                     <LinkComponent url="/edit" text="Edit" />
@@ -271,26 +293,37 @@ export default async function Dashboard() {
                       </label>
                     </div>
                   </td>
-                  <th
+                  <td
                     scope="row"
                     className="flex items-center px-6 py-4 text-gray-900 whitespace-nowra"
                   >
+                    <div>
+                      <Image
+                        src={"https://oracle.com/favicon.ico"}
+                        alt={"oracle logo"}
+                        width={20}
+                        height={20}
+                      ></Image>
+                    </div>
                     <div className="ps-3">
                       <div className="font-bold text-gray-900">
-                        Check google ever 5 seconds
+                        Ping Oracle every minute
                       </div>
                       <div className="text-xs">
                         <LinkComponent
-                          url="www.google.com"
-                          text="https://www.google.com"
+                          url="https://www.oracle.com"
+                          text="https://www.oracle.com"
                         />
                       </div>
                     </div>
-                  </th>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p>{new Date().toISOString()}</p>
+                  </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
-                      <div className="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>{" "}
-                      Online
+                      <div className="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>{" "}
+                      Offline
                     </div>
                   </td>
                   <td className="px-6 py-4">
@@ -307,95 +340,19 @@ export default async function Dashboard() {
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
                       <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
+                      <li className="bg-red-500 w-2 h-10 rounded"></li>
                     </ul>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p>{new Date().toISOString()}</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <LinkComponent url="/edit" text="Edit" />
-                  </td>
-                </tr>
-                <tr className="bg-white border-b hover:bg-gray-100">
-                  <td className="w-4 p-4">
-                    <div className="flex items-center">
-                      <input
-                        id="checkbox-table-search-1"
-                        type="checkbox"
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      ></input>
-                      <label
-                        htmlFor="checkbox-table-search-1"
-                        className="sr-only"
-                      >
-                        checkbox
-                      </label>
-                    </div>
-                  </td>
-                  <th
-                    scope="row"
-                    className="flex items-center px-6 py-4 text-gray-900 whitespace-nowra"
-                  >
-                    <div className="ps-3">
-                      <div className="font-bold text-gray-900">
-                        Check google ever 5 seconds
-                      </div>
-                      <div className="text-xs">
-                        <LinkComponent
-                          url="www.google.com"
-                          text="https://www.google.com"
-                        />
-                      </div>
-                    </div>
-                  </th>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center">
-                      <div className="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>{" "}
-                      Online
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <ul className="flex flex-row justify-evenly">
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                      <li className="bg-green-500 w-2 h-10 rounded"></li>
-                    </ul>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p>{new Date().toISOString()}</p>
                   </td>
                   <td className="px-6 py-4">
                     <LinkComponent url="/edit" text="Edit" />
@@ -404,32 +361,6 @@ export default async function Dashboard() {
               </tbody>
             </table>
           </div>
-          {/* <table className="table-auto bg-gray-100 w-full">
-            <thead>
-              <tr>
-                <th>Song</th>
-                <th>Artist</th>
-                <th>Year</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                <td>Malcolm Lockyer</td>
-                <td>1961</td>
-              </tr>
-              <tr>
-                <td>Witchy Woman</td>
-                <td>The Eagles</td>
-                <td>1972</td>
-              </tr>
-              <tr>
-                <td>Shining Star</td>
-                <td>Earth, Wind, and Fire</td>
-                <td>1975</td>
-              </tr>
-            </tbody>
-          </table> */}
         </div>
       </div>
     </main>
