@@ -6,13 +6,13 @@ const nextConfig = {
         hostname: "pbs.twimg.com",
       },
       {
-        hostname: "stripe.com",
+        hostname: "www.stripe.com",
       },
       {
-        hostname: "google.com",
+        hostname: "www.google.com",
       },
       {
-        hostname: "oracle.com",
+        hostname: "www.oracle.com",
       },
     ],
   },
