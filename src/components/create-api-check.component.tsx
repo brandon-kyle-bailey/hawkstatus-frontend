@@ -1,23 +1,26 @@
 "use client";
 
-import { useState, Fragment, FormEvent } from "react";
+import { useState, Fragment, FormEvent, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { heroGradient } from "@/lib/styles/gradients";
 
 export default function ModalVideo() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [name, setName] = useState<string>("");
-  const [url, setUrl] = useState<string>("");
-  const [interval, setInterval] = useState<string>("6000");
-  const [method, setMethod] = useState<string>("GET");
-  const [body, setBody] = useState<string>("");
   const [headers, setHeaders] = useState<{ [key: string]: string }[]>([
     { id: "0", key: "Authorization", value: "Bearer ..." },
   ]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(name, url, interval, method, body, headers);
+    const credentials = Object.fromEntries(new FormData(event.currentTarget));
+    console.log(credentials);
+    console.log(headers);
+    setModalOpen(false);
   };
+
+  useEffect(() => {
+    setHeaders([{ id: "0", key: "Authorization", value: "Bearer ..." }]);
+  }, [modalOpen]);
 
   return (
     <div>
@@ -52,45 +55,71 @@ export default function ModalVideo() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-75"
           >
-            <div className="mx-auto w-1/2 h-full flex items-center">
+            <div className="mx-auto w-1/3 h-full flex items-center">
               <Dialog.Panel className="w-full max-h-full rounded-lg shadow-2xl aspect-video bg-white">
                 <div className="text-gray-900 p-10">
-                  <p className="text-lg mb-6">Create API Check</p>
+                  <div className="flex flex-row flex-auto justify-between">
+                    <p className="text-lg mb-6">Create API Check</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-8 h-8 hover:bg-red-600 hover:cursor-pointer rounded-full"
+                      type="button"
+                      onClick={() => setModalOpen(false)}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                  </div>
                   <form
-                    className="text-gray-900 flex flex-col space-y-2 p-10"
+                    className="text-gray-900 flex flex-col space-y-2"
                     onSubmit={(e) => handleSubmit(e)}
                   >
-                    <label htmlFor="name">Name</label>
+                    <label className="text-base" htmlFor="name">
+                      Name
+                    </label>
                     <input
                       name="name"
                       type="text"
                       aria-label="name"
                       placeholder="Ping Google every 5 minutes"
-                      onChange={(e) => setName(e.target.value)}
+                      className="placeholder-gray-400 bg-gray-200 border border-neutral-700 h-14 rounded-md p-4"
                     />
-                    <label htmlFor="url">url</label>
+                    <label className="text-base" htmlFor="url">
+                      url
+                    </label>
                     <input
                       name="url"
                       type="text"
                       aria-label="url"
                       placeholder="https://www.google.com"
-                      onChange={(e) => setUrl(e.target.value)}
+                      className="placeholder-gray-400 bg-gray-200 border border-neutral-700 h-14 rounded-md p-4"
                     />
-                    <label htmlFor="interval">Run check every...</label>
+                    <label className="text-base" htmlFor="interval">
+                      Run check every...
+                    </label>
                     <select
                       name="interval"
                       id="interval"
-                      onChange={(e) => setInterval(e.target.value)}
+                      className="placeholder-gray-400 bg-gray-200 border border-neutral-700 h-14 rounded-md p-4"
                     >
                       <option value="60000">1 minute</option>
                       <option value="300000">5 minutes</option>
                       <option value="1800000">30 minutes</option>
                     </select>
-                    <label htmlFor="method">method</label>
+                    <label className="text-base" htmlFor="method">
+                      method
+                    </label>
                     <select
                       name="method"
                       id="method"
-                      onChange={(e) => setMethod(e.target.value)}
+                      className="placeholder-gray-400 bg-gray-200 border border-neutral-700 h-14 rounded-md p-4"
                     >
                       <option value="GET">GET</option>
                       <option value="PATCH">PATCH</option>
@@ -98,28 +127,48 @@ export default function ModalVideo() {
                       <option value="PUT">PUT</option>
                       <option value="DELETE">DELETE</option>
                     </select>
-                    <label htmlFor="body">body</label>
+                    <label className="text-base" htmlFor="body">
+                      body (Optional)
+                    </label>
                     <input
                       name="body"
                       type="text"
                       aria-label="body"
                       placeholder="{'hello': 'world'}"
-                      onChange={(e) => setBody(e.target.value)}
+                      className="placeholder-gray-400 bg-gray-200 border border-neutral-700 h-14 rounded-md p-4"
                     />
-                    <label htmlFor="headers">headers</label>
-                    <ul className="w-auto">
+                    <label className="text-base" htmlFor="headers">
+                      headers (Optional)
+                    </label>
+                    <button
+                      onClick={() =>
+                        setHeaders([
+                          ...headers,
+                          {
+                            id: headers.length.toString(),
+                            key: "Authorization",
+                            value: "Bearer ...",
+                          },
+                        ])
+                      }
+                      type="button"
+                      className="text-white bg-green-500 rounded-md hover:animate-pulse focus:animate-pulse p-2 flex-end"
+                    >
+                      +
+                    </button>
+                    <ul className="space-y-4 w-full">
                       {headers.map((header) => {
                         return (
                           <li
                             key={header.id}
-                            className="flex flex-row justify-evenly flex-wrap space-x-2"
+                            className="flex flex-row space-x-2"
                           >
                             <input
                               name="header"
                               type="text"
                               aria-label="header"
                               placeholder={header.key}
-                              className="flex-auto w-10"
+                              className="placeholder-gray-400 bg-gray-200 border border-neutral-700 rounded-md p-4 flex-auto h-14 w-10"
                               onChange={(e) =>
                                 setHeaders([
                                   ...headers.map((i) => {
@@ -136,7 +185,7 @@ export default function ModalVideo() {
                               type="text"
                               aria-label="header"
                               placeholder={header.value}
-                              className="flex-auto w-10"
+                              className="placeholder-gray-400 bg-gray-200 border border-neutral-700 rounded-md p-4 flex-auto h-14 w-10"
                               onChange={(e) =>
                                 setHeaders([
                                   ...headers.map((i) => {
@@ -149,6 +198,7 @@ export default function ModalVideo() {
                               }
                             />
                             <button
+                              className="bg-red-500 hover:cursor-pointer rounded text-white w-6"
                               onClick={() =>
                                 setHeaders(
                                   headers.filter((i) => i.id !== header.id)
@@ -156,28 +206,18 @@ export default function ModalVideo() {
                               }
                               type="button"
                             >
-                              Remove
+                              X
                             </button>
                           </li>
                         );
                       })}
-                      <button
-                        onClick={() =>
-                          setHeaders([
-                            ...headers,
-                            {
-                              id: headers.length.toString(),
-                              key: "Authorization",
-                              value: "Bearer ...",
-                            },
-                          ])
-                        }
-                        type="button"
-                      >
-                        Add Header
-                      </button>
                     </ul>
-                    <button type="submit">Create</button>
+                    <button
+                      className={`${heroGradient} text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 h-14 rounded-md hover:animate-pulse focus:animate-pulse`}
+                      type="submit"
+                    >
+                      Create
+                    </button>
                   </form>
                 </div>
               </Dialog.Panel>

@@ -2,10 +2,11 @@ import { heroGradient } from "@/lib/styles/gradients";
 
 export default function Error() {
   return (
-    <main className="flex flex-row h-max w-screen justify-evenly text-white text-2xl">
+    <main className="flex flex-row h-screen w-screen justify-evenly text-white text-2xl">
       <div
         className={
-          heroGradient + " flex-1 h-max w-full flex justify-center items-center"
+          heroGradient +
+          " flex-1 h-screen w-full flex justify-center items-center"
         }
       >
         <div className="w-full flex justify-center items-center flex-col">
