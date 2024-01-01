@@ -53,7 +53,7 @@ export default function LatencyChartComponent(props: {
 
   return (
     <div className="w-full h-fit p-2">
-      <h2 className="text-4xl font-bold">Average Response time (24hr)</h2>
+      <h2 className="text-4xl">Average Response time (24hr)</h2>
       <canvas ref={canvasEl} width={"100%"} height={"50%"} />
     </div>
   );

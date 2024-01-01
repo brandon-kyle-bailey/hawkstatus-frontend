@@ -33,7 +33,7 @@ export default function UptimeChartComponent() {
 
   return (
     <div className="w-fit h-fit p-2">
-      <h2 className="text-4xl font-bold">Average Uptime %</h2>
+      <h2 className="text-4xl">Average Uptime %</h2>
       <p className="text-green-500">{uptimeScore}%</p>
       <canvas ref={canvasEl} width={"100%"} height={"100%"} />
     </div>

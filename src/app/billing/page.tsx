@@ -2,6 +2,7 @@ import LinkComponent from "@/components/link.component";
 import NavigationLeftComponent from "@/components/navigation-left.component";
 import NavigationTopComponent from "@/components/navigation-top.component";
 import { authOptions } from "@/lib/config/auth";
+import { heroGradient } from "@/lib/styles/gradients";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
@@ -22,7 +23,9 @@ export default async function Billing() {
           </div>
           <div className="relative flex flex-col flex-auto justify-evenly space-y-6">
             <div className="shadow-md flex flex-col flex-auto justify-evenly space-y-2 bg-white rounded-lg">
-              <div className="flex flex-row text-xl border border-neutral-200 align-middle justify-center items-center text-center p-6 bg-cyan-400 rounded-t-lg">
+              <div
+                className={`flex flex-row text-xl border border-neutral-200 align-middle justify-center items-center text-center p-6 rounded-t-lg ${heroGradient}`}
+              >
                 <div className="flex flex-row space-x-6 align-middle justify-center items-center text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +90,7 @@ export default async function Billing() {
                       d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                     />
                   </svg>
-                  <p>Basic plan</p>
+                  <p>Business plan</p>
                 </div>
                 <a href="#" className="ml-auto">
                   <svg
@@ -108,7 +111,7 @@ export default async function Billing() {
               </div>
               <div className="p-6">
                 <div className="flex flex-row justify-start align-middle items-end space-x-1">
-                  <p className="text-3xl">$10</p>
+                  <p className="text-3xl">$20</p>
                   <p className="text-gray-500">per month</p>
                 </div>
                 <p className="text-gray-500">
@@ -136,7 +139,7 @@ export default async function Billing() {
                       d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                     />
                   </svg>
-                  <p>Basic plan</p>
+                  <p>Enterprise plan</p>
                 </div>
                 <a href="#" className="ml-auto">
                   <svg
@@ -157,7 +160,7 @@ export default async function Billing() {
               </div>
               <div className="p-6">
                 <div className="flex flex-row justify-start align-middle items-end space-x-1">
-                  <p className="text-3xl">$10</p>
+                  <p className="text-3xl">$40</p>
                   <p className="text-gray-500">per month</p>
                 </div>
                 <p className="text-gray-500">

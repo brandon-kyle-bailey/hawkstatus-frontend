@@ -70,7 +70,7 @@ export function ApiCheckRowComponent(props: {
       <ApiCheckStatusComponent results={props.data.results} />
       <ApiCheckUptimeComponent results={props.data.results} />
       <td className="px-6 py-4">
-        <a href="/">
+        <a href={`/service-check/${props.data.id}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

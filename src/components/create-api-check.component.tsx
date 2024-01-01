@@ -26,7 +26,7 @@ export default function CreateApiCheckComponent() {
     <div>
       <button
         className={
-          " p-4 rounded-md hover:animate-pulse focus:animate-pulse bg-gray-900 text-white"
+          "p-4 rounded-md hover:animate-pulse focus:animate-pulse bg-gray-900 text-white"
         }
         type="button"
         onClick={() => setModalOpen(true)}
