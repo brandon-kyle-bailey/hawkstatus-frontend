@@ -1,5 +1,4 @@
 import { getServerSession } from "next-auth";
-import LinkComponent from "./link.component";
 import { authOptions } from "@/lib/config/auth";
 import { redirect } from "next/navigation";
 import Image from "next/image";
@@ -54,7 +53,7 @@ export default async function NavigationTopComponent() {
           </a>
         </li>
         <li className="flex flex-row space-x-2 items-center">
-          <a href="/profile">
+          <a href="/account">
             <Image
               src={
                 "https://pbs.twimg.com/profile_images/1720492852336070656/iLs6Fd18_400x400.jpg"

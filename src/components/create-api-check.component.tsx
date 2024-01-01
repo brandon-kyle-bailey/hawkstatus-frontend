@@ -4,7 +4,7 @@ import { useState, Fragment, FormEvent, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { heroGradient } from "@/lib/styles/gradients";
 
-export default function ModalVideo() {
+export default function CreateApiCheckComponent() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [headers, setHeaders] = useState<{ [key: string]: string }[]>([
     { id: "0", key: "Authorization", value: "Bearer ..." },
@@ -85,6 +85,7 @@ export default function ModalVideo() {
                       Name
                     </label>
                     <input
+                      required
                       name="name"
                       type="text"
                       aria-label="name"
@@ -95,6 +96,7 @@ export default function ModalVideo() {
                       url
                     </label>
                     <input
+                      required
                       name="url"
                       type="text"
                       aria-label="url"
