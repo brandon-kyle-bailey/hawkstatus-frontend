@@ -23,6 +23,12 @@ const nextConfig = {
       {
         hostname: "www.oracle.com",
       },
+      {
+        hostname: "news.ycombinator.com"
+      },
+      {
+        hostname: "m.twitch.tv"
+      }
     ],
   },
 };

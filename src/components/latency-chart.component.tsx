@@ -21,7 +21,7 @@ export default function LatencyChartComponent(props: {
       label: res.name,
       fill: true,
       tension: 0.1,
-      data: res.results.map((i) => i.duration),
+      data: res.results.length > 24 ? res.results.slice(res.results.length - 26, res.results.length - 1).map((i) => i.duration) : res.results.map((i) => i.duration),
     };
   });
 
