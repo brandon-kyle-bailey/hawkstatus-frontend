@@ -1,8 +1,27 @@
-import { mockApiData } from "@/lib/mock/api";
+import { getServerSession } from "next-auth";
 import { ApiCheckRowComponent } from "./api-check-row.component";
 import CreateApiCheckComponent from "./create-api-check.component";
+import { authOptions } from "@/lib/config/auth";
+import { redirect } from "next/navigation";
+import { getIncidents } from "@/lib/hooks/get-incidents.hooks";
+import { getServiceCheckResults } from "@/lib/hooks/get-service-check-results.hook";
+import { getServiceChecks } from "@/lib/hooks/get-service-checks.hook";
 
-export function ApiChecksTableComponent() {
+export default async function ApiChecksTableComponent() {
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect("/signin");
+  }
+
+  const serviceChecks = await getServiceChecks(session.user?.access_token!);
+  const results = [];
+  for (let i = 0; i < serviceChecks.length; i++) {
+    const check = serviceChecks[i];
+    const incidents = await getIncidents(session.user?.access_token!, check.id);
+    const scResults = await getServiceCheckResults(session.user?.access_token!, check.id);
+    results.push({...check, incidents, results: scResults})
+  }
+
   return (
     <div className="relative overflow-x-auto shadow-md rounded-lg">
       <div className="flex items-center justify-between flex-row space-y-4 py-4 bg-white p-10">
@@ -14,7 +33,7 @@ export function ApiChecksTableComponent() {
             placeholder="Search"
           ></input>
         </div>
-        <CreateApiCheckComponent />
+        <CreateApiCheckComponent token={session.user?.access_token!} apiUrl={process.env.API_URL!}/>
       </div>
       <table className="w-full text-sm text-left rtl:text-right">
         <caption className="p-5 text-lg font-semibold text-left rtl:text-right bg-gray-50">
@@ -59,9 +78,9 @@ export function ApiChecksTableComponent() {
           </tr>
         </thead>
         <tbody>
-          {mockApiData.map((check) => (
-            <ApiCheckRowComponent key={check.id} data={check} />
-          ))}
+          {results.map((check: any) => {
+            return <ApiCheckRowComponent key={check.id} data={check} />;
+          })}
         </tbody>
       </table>
     </div>

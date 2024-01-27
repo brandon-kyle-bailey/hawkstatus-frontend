@@ -8,17 +8,18 @@ export default function LatencyChartComponent(props: {
 }) {
   const canvasEl = useRef(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   let labels: string[] = [];
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i <= 24; i++) {
     let hour = new Date();
-    hour.setHours(i, 0, 0);
+    hour.setHours(i, i % 2 === 0 ? 0 : 30);
     labels.push(hour.toLocaleTimeString());
   }
 
   const datasets = props.data.map((res) => {
     return {
       label: res.name,
-      fill: false,
+      fill: true,
       tension: 0.1,
       data: res.results.map((i) => i.duration),
     };
@@ -49,7 +50,7 @@ export default function LatencyChartComponent(props: {
     return () => {
       chart.destroy();
     };
-  }, []);
+  }, [datasets, labels]);
 
   return (
     <div className="w-full h-fit p-2">

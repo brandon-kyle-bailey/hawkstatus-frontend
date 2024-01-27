@@ -73,7 +73,7 @@ export default function CredentialsSignupFormComponent(props: {
         <input
           className="font-thin bg-stone-600 border border-neutral-700 h-14 rounded-md p-4"
           name="confirmPassword"
-          type="confirmPassword"
+          type="password"
           aria-label="confirmPassword"
           placeholder="Confirm Password"
         />

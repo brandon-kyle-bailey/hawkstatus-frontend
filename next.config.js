@@ -12,6 +12,15 @@ const nextConfig = {
         hostname: "www.google.com",
       },
       {
+        hostname: "google.com",
+      },
+      {
+        hostname: "github.com",
+      },
+      {
+        hostname: "www.github.com",
+      },
+      {
         hostname: "www.oracle.com",
       },
     ],

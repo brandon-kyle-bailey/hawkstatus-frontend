@@ -3,7 +3,6 @@ import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
 import NavigationLeftComponent from "@/components/navigation-left.component";
 import NavigationTopComponent from "@/components/navigation-top.component";
-import { ApiChecksTableComponent } from "@/components/api-checks-table.component";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const session = await getServerSession(authOptions);

@@ -3,10 +3,7 @@ import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
 import NavigationLeftComponent from "@/components/navigation-left.component";
 import NavigationTopComponent from "@/components/navigation-top.component";
-import LatencyChartComponent from "@/components/latency-chart.component";
-import UptimeChartComponent from "@/components/uptime-chart.component copy";
-import { mockApiData } from "@/lib/mock/api";
-import { ApiChecksTableComponent } from "@/components/api-checks-table.component";
+import ApiChecksTableComponent from "@/components/api-checks-table.component";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);

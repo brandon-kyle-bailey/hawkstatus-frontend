@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  postgres:
+  postgres-fe:
     image: postgres
-    container_name: postgres
+    container_name: postgres-fe
     restart: always
     user: postgres
     environment:
@@ -19,5 +19,5 @@ services:
     logging:
       driver: "none"
     ports:
-      - ${SMTP_PORT}:${SMTP_PORT}
-      - 8025:8025
+      - ${SMTP_PORT}:1025
+      - 8026:8025

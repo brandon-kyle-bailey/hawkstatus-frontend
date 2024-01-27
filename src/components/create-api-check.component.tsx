@@ -4,7 +4,7 @@ import { useState, Fragment, FormEvent, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { heroGradient } from "@/lib/styles/gradients";
 
-export default function CreateApiCheckComponent() {
+export default function CreateApiCheckComponent(props: {token: string, apiUrl: string}) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [headers, setHeaders] = useState<{ [key: string]: string }[]>([
     { id: "0", key: "Authorization", value: "Bearer ..." },
@@ -13,8 +13,32 @@ export default function CreateApiCheckComponent() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const credentials = Object.fromEntries(new FormData(event.currentTarget));
-    console.log(credentials);
-    console.log(headers);
+    const headersObj = headers.reduce((acc, ele) => {
+      if (ele.id !== "0") {
+        acc[ele.key] = ele.value;
+      }
+      return acc;
+    }, {});
+    const res = await fetch(`${props.apiUrl}/service-check`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: credentials.name,
+        url: credentials.url,
+        interval: credentials.interval,
+        timeout: "",
+        alertCheckThreshold: 3,
+        method: credentials.method,
+        body: credentials.body,
+        headers: headersObj,
+        status: 'active',
+        type: 'interval',
+      }),
+      headers: { 
+        "Content-Type": "application/json", 
+        "Authorization": `Bearer ${props.token}`
+      },
+    });
+    await res.json();
     setModalOpen(false);
   };
 

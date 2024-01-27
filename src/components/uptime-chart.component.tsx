@@ -29,7 +29,7 @@ export default function UptimeChartComponent() {
     return () => {
       chart.destroy();
     };
-  }, []);
+  }, [downtimeScore]);
 
   return (
     <div className="w-fit h-fit p-2">

@@ -59,7 +59,6 @@ export function ApiCheckRowComponent(props: {
           <div className="text-lg text-gray-900">{props.data.name}</div>
           <div className="text-xs">
             <LinkComponent url={props.data.url} text={props.data.url} />
-            {/* <a href={props.data.url}>{props.data.url}</a> */}
           </div>
         </div>
       </td>
