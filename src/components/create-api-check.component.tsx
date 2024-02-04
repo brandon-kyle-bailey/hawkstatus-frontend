@@ -14,9 +14,7 @@ export default function CreateApiCheckComponent(props: {token: string, apiUrl: s
     event.preventDefault();
     const credentials = Object.fromEntries(new FormData(event.currentTarget));
     const headersObj = headers.reduce((acc, ele) => {
-      if (ele.id !== "0") {
-        acc[ele.key] = ele.value;
-      }
+      acc[ele.key] = ele.value;
       return acc;
     }, {});
     const res = await fetch(`${props.apiUrl}/service-check`, {
