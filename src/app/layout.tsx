@@ -8,8 +8,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Hawkstatus | Hawk like API monitoring",
-  description: "Hawk like API monitoring with hawkstatus.com",
+  title: "HawkStatus - Simple Uptime Monitoring",
+  description:
+    "Ensure uninterrupted website performance with HawkStatus, the leading uptime monitoring tool. Real-time monitoring, free uptime monitoring, instant alerts, and performance insights to keep your online presence at its best. Stay ahead with HawkStatus! simple uptime monitoring",
+  robots: "follow, index",
 };
 
 export default function RootLayout({

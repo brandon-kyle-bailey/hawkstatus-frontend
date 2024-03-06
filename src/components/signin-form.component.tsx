@@ -32,24 +32,24 @@ export default function CredentialsSigninFormComponent(props: {
     <>
       <p className="text-lg mb-6">Please login to you account</p>
       <form
-        className="text-white flex flex-col space-y-2"
+        className="flex flex-col space-y-2"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <label className="text-base text-white" htmlFor="email">
+        <label className="text-base " htmlFor="email">
           Email Address
         </label>
         <input
-          className="font-thin bg-stone-600 border border-neutral-700 h-14 rounded-md p-4"
+          className="font-thin border border-neutral-500 h-14 rounded-md p-4"
           name="email"
           type="email"
           aria-label="email address"
           placeholder="Email address"
         />
-        <label className="text-base text-white" htmlFor="password">
+        <label className="text-base " htmlFor="password">
           Password
         </label>
         <input
-          className="font-thin bg-stone-600 border border-neutral-700 h-14 rounded-md p-4"
+          className="font-thin border border-neutral-500 h-14 rounded-md p-4"
           name="password"
           type="password"
           aria-label="password"

@@ -2,14 +2,13 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { Role } from "@/lib/enum/role.enum";
 
-
 export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       return true;
     },
     async redirect({ url, baseUrl }) {
-      return baseUrl;
+      return url;
     },
     async session({ session, user, token }) {
       if (token && session.user) {
@@ -60,7 +59,10 @@ export const authOptions: NextAuthOptions = {
           } else {
             const res = await fetch(`${process.env.API_URL}/user/signin`, {
               method: "POST",
-              body: JSON.stringify({email: credentials.email, password: credentials.password}),
+              body: JSON.stringify({
+                email: credentials.email,
+                password: credentials.password,
+              }),
               headers: { "Content-Type": "application/json" },
             });
             const user = await res.json();
