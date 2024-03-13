@@ -5,7 +5,7 @@ export default async function LandingPage() {
         <a className="font-bold text-2xl" href="#">
           Hawkstatus
         </a>
-        <ul className="flex flex-row justify-evenly space-x-8 text-lg">
+        <ul className="flex flex-row justify-evenly space-x-8 text-lg invisible lg:visible">
           <li>
             <a href="#empathy">About</a>
           </li>
@@ -13,35 +13,35 @@ export default async function LandingPage() {
             <a href="#pain">Features</a>
           </li>
           <li>
-            <a href="#authority">Why HawkStatus?</a>
+            <a href="#authority">
+              Why <span className="font-bold">HawkStatus</span>?
+            </a>
           </li>
           <li>
-            <a href="#action">Pricing</a>
+            <a href="#pricing">Pricing</a>
           </li>
         </ul>
-        <div className="flex flex-row space-x-8 text-lg">
+        <div className="flex flex-row space-x-8 text-lg invisible lg:visible">
           <a href="/signin">Sign In</a>
           <a href="/signin">Sign Up</a>
         </div>
       </nav>
-      <main id="impact" className="flex flex-row p-10">
-        <div className="w-1/2 flex flex-col justify-center space-y-8">
-          <h1 className="text-6xl">
+      <main id="impact" className="flex flex-col lg:flex-row lg:space-x-8 p-10">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-8">
+          <h1 className="text-4xl lg:text-6xl">
             Unleash the power of Uptime with{" "}
             <span className="font-bold">Hawkstatus</span>
           </h1>
           <p className="text-lg">Uptime monitoring made easy.</p>
-          <div className="flex flex-row space-x-8 text-lg">
+          <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 text-lg">
             <a href="/signin">Get Started</a>
             <a href="/book-a-demo">Book a Demo</a>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
-            width="772.90945"
-            height="531.44094"
             viewBox="0 0 772.90945 531.44094"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
@@ -264,7 +264,7 @@ export default async function LandingPage() {
             />
           </svg>
         </div>
-        <ul className="flex flex-row space-x-8">
+        <ul className="flex flex-col lg:flex-row lg:space-x-8">
           <li>
             <a href="https://google.com">Google</a>
           </li>
@@ -285,13 +285,14 @@ export default async function LandingPage() {
           </li>
         </ul>
       </section>
-      <section id="empathy" className="flex flex-row p-10">
-        <div className="w-1/2">
+      <section
+        id="empathy"
+        className="flex flex-col lg:flex-row lg:space-x-8 p-10"
+      >
+        <div className="w-full lg:w-1/2">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
-            width="772.90945"
-            height="531.44094"
             viewBox="0 0 772.90945 531.44094"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
@@ -446,8 +447,10 @@ export default async function LandingPage() {
             />
           </svg>
         </div>
-        <div className="w-1/2 flex flex-col justify-start space-y-8">
-          <h1 className="text-4xl">Some Catchy Title</h1>
+        <div className="w-full lg:w-1/2 flex flex-col justify-start space-y-8">
+          <h1 className="text-4xl">
+            What is <span className="font-bold">HawkStatus</span>?
+          </h1>
           <p className="text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
             dolore nisi quas commodi. In ut eum blanditiis eveniet unde quasi
@@ -460,9 +463,14 @@ export default async function LandingPage() {
           </div>
         </div>
       </section>
-      <section id="pain" className="flex flex-row p-10">
-        <div className="w-1/2 flex flex-col justify-start space-y-8">
-          <h1 className="text-4xl">Some Catchy Title</h1>
+      <section
+        id="pain"
+        className="flex flex-col lg:flex-row lg:space-x-8 p-10"
+      >
+        <div className="w-full lg:w-1/2 flex flex-col justify-start space-y-8">
+          <h1 className="text-4xl">
+            What can <span className="font-bold">HawkStatus</span> do?
+          </h1>
           <p className="text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
             dolore nisi quas commodi. In ut eum blanditiis eveniet unde quasi
@@ -474,12 +482,10 @@ export default async function LandingPage() {
             <a href="/book-a-demo">Book a Demo</a>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
-            width="772.90945"
-            height="531.44094"
             viewBox="0 0 772.90945 531.44094"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
@@ -636,13 +642,11 @@ export default async function LandingPage() {
         </div>
       </section>
       <section id="authority" className="flex flex-col p-10">
-        <div className="flex flex-row">
-          <div className="w-1/2">
+        <div className="flex flex-col lg:flex-row lg:space-x-8">
+          <div className="w-full lg:w-1/2">
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
-              width="772.90945"
-              height="531.44094"
               viewBox="0 0 772.90945 531.44094"
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
@@ -802,7 +806,7 @@ export default async function LandingPage() {
               />
             </svg>
           </div>
-          <div className="w-1/2 flex flex-col justify-start space-y-8">
+          <div className="w-full lg:w-1/2 flex flex-col justify-start space-y-8">
             <h1 className="text-4xl">Why HawkStatus?</h1>
             <p className="text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
@@ -816,11 +820,11 @@ export default async function LandingPage() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center space-y-8">
-          <h1 className="text-4xl w-1/2 text-center">
-            Pricing plans to fit any use case.
+        <div id="pricing" className="flex flex-col items-center space-y-8 p-20">
+          <h1 className="text-4xl text-center">
+            Pricing plans that match any use case.
           </h1>
-          <div className="flex flex-row space-x-8">
+          <div className="flex flex-col lg:flex-row space-y-8 lg:space-x-8 lg:space-y-1">
             <div className="flex flex-col space-y-8 rounded-2xl p-10 text-left border-solid border border-gray-300">
               <h2 className="font-bold">Personal</h2>
               <p>For personal projects</p>
@@ -844,7 +848,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Checks every 3 minutes</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -859,7 +863,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>5 monitors</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -874,45 +878,15 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Email alerts</p>
-                </li>
-                <li className="flex flex-row space-x-8">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p>Slack & Discord integrations</p>
-                </li>
-                <li className="flex flex-row space-x-8">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p>HTTP API & CLI</p>
+                  <p>Some super awesome feature</p>
                 </li>
               </ul>
             </div>
             <div className="flex flex-col space-y-8 rounded-2xl p-10 text-left border-solid border border-gray-300">
-              <h2 className="font-bold">Personal</h2>
-              <p>For personal projects</p>
+              <h2 className="font-bold">Consultant</h2>
+              <p>For those jack-of-all trades</p>
               <p>
-                <span className="text-6xl">$0</span>/month
+                <span className="text-6xl">$TBD</span>/month
               </p>
               <a className="self-center" href="/signup">
                 Get Started
@@ -931,7 +905,9 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Checks every 3 minutes</p>
+                  <p>
+                    All features in <span className="font-bold">Personal</span>
+                  </p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -946,7 +922,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>5 monitors</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -961,7 +937,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Email alerts</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -976,30 +952,15 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Slack & Discord integrations</p>
-                </li>
-                <li className="flex flex-row space-x-8">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p>HTTP API & CLI</p>
+                  <p>Some super awesome feature</p>
                 </li>
               </ul>
             </div>
             <div className="flex flex-col space-y-8 rounded-2xl p-10 text-left border-solid border border-gray-300">
-              <h2 className="font-bold">Personal</h2>
-              <p>For personal projects</p>
+              <h2 className="font-bold">Startup</h2>
+              <p>For awesome startup teams</p>
               <p>
-                <span className="text-6xl">$0</span>/month
+                <span className="text-6xl">$TBD</span>/month
               </p>
               <a className="self-center" href="/signup">
                 Get Started
@@ -1018,7 +979,10 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Checks every 3 minutes</p>
+                  <p>
+                    All features in{" "}
+                    <span className="font-bold">Consultant</span>
+                  </p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -1033,7 +997,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>5 monitors</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -1048,7 +1012,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Email alerts</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -1063,30 +1027,15 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Slack & Discord integrations</p>
-                </li>
-                <li className="flex flex-row space-x-8">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p>HTTP API & CLI</p>
+                  <p>Some super awesome feature</p>
                 </li>
               </ul>
             </div>
             <div className="flex flex-col space-y-8 rounded-2xl p-10 text-left border-solid border border-gray-300">
-              <h2 className="font-bold">Personal</h2>
-              <p>For personal projects</p>
+              <h2 className="font-bold">Enterprise</h2>
+              <p>For large scale business</p>
               <p>
-                <span className="text-6xl">$0</span>/month
+                <span className="text-6xl">$TBD</span>/month
               </p>
               <a className="self-center" href="/signup">
                 Get Started
@@ -1105,7 +1054,9 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Checks every 3 minutes</p>
+                  <p>
+                    All features in <span className="font-bold">Startup</span>
+                  </p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -1120,7 +1071,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>5 monitors</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -1135,7 +1086,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Email alerts</p>
+                  <p>Some super awesome feature</p>
                 </li>
                 <li className="flex flex-row space-x-8">
                   <svg
@@ -1150,22 +1101,7 @@ export default async function LandingPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p>Slack & Discord integrations</p>
-                </li>
-                <li className="flex flex-row space-x-8">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p>HTTP API & CLI</p>
+                  <p>Some super awesome feature</p>
                 </li>
               </ul>
             </div>
@@ -1187,8 +1123,8 @@ export default async function LandingPage() {
           <a href="/book-a-demo">Book a Demo</a>
         </div>
       </section>
-      <footer className="flex flex-row justify-evenly p-10">
-        <div className="w-1/3">
+      <footer className="flex flex-col lg:flex-row justify-evenly p-10">
+        <div className="w-full lg:w-1/3">
           <p>
             <span className="font-bold">HawkStatus</span> is a comprehensive
             uptime monitoring tool that provides real-time monitoring, alerting,
@@ -1196,15 +1132,36 @@ export default async function LandingPage() {
             available.
           </p>
         </div>
-        <div className="flex flex-row w-2/3 justify-evenly">
-          <div>
-            <h3>Product</h3>
+        <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-evenly">
+          <div className="flex flex-col space-y-8">
+            <h3 className="font-bold">Product</h3>
+            <ul className="flex flex-col space-y-4">
+              <li>
+                <a href="#pricing">Pricing</a>
+              </li>
+            </ul>
           </div>
-          <div>
-            <h3>Support</h3>
+          <div className="flex flex-col space-y-8">
+            <h3 className="font-bold">Support</h3>
+            <ul className="flex flex-col space-y-4">
+              <li>
+                <a href="/book-a-demo">Book a Demo</a>
+              </li>
+            </ul>
           </div>
-          <div>
-            <h3>Company</h3>
+          <div className="flex flex-col space-y-8">
+            <h3 className="font-bold">Company</h3>
+            <ul className="flex flex-col space-y-4">
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
+              <li>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="/terms-of-service">Terms of Service</a>
+              </li>
+            </ul>
           </div>
         </div>
       </footer>
