@@ -1,23 +1,13 @@
-"use client";
+'use client';
 import { signIn } from "next-auth/react";
 import { FormEvent } from "react";
-import LinkComponent from "./link.component";
 
 interface SigninCredentials {
   email: string;
   password: string;
 }
 
-export default function CredentialsSigninFormComponent(props: {
-  urls: {
-    callback: string;
-    forgot_password: string;
-    signup: string;
-  };
-  styles: {
-    submit: string;
-  };
-}) {
+export default function SigninFormComponent()  {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const credentials: SigninCredentials = Object.fromEntries(
@@ -25,52 +15,19 @@ export default function CredentialsSigninFormComponent(props: {
     ) as unknown as SigninCredentials;
     signIn("credentials", {
       ...credentials,
-      callbackUrl: props.urls.callback,
+      callbackUrl: '/dashboard',
     });
   };
-  return (
-    <>
-      <p className="text-lg mb-6">Please login to you account</p>
-      <form
-        className="flex flex-col space-y-2"
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <label className="text-base " htmlFor="email">
-          Email Address
-        </label>
-        <input
-          className="font-thin border border-neutral-500 h-14 rounded-md p-4"
-          name="email"
-          type="email"
-          aria-label="email address"
-          placeholder="Email address"
-        />
-        <label className="text-base " htmlFor="password">
-          Password
-        </label>
-        <input
-          className="font-thin border border-neutral-500 h-14 rounded-md p-4"
-          name="password"
-          type="password"
-          aria-label="password"
-          placeholder="Password"
-        />
-        <button className={props.styles.submit} type="submit">
+
+  return (      
+  <form className="flex flex-col space-y-4 w-1/4" onSubmit={(e) => handleSubmit(e)}>
+        <label htmlFor="email">Email Address</label>
+        <input className="border rounded-md p-2" type="email" name="email" aria-label="email address" placeholder="Email Address" />
+        <label htmlFor="password">Password</label>
+        <input className="border rounded-md p-2" type="password" name="password" aria-label="password" placeholder="Password" />
+        <button className="bg-blue-500 text-white p-2 rounded-md" type="submit">
           Log In
         </button>
       </form>
-      <div className="mt-6 w-full flex justify-center items-center">
-        <LinkComponent
-          url={props.urls.forgot_password}
-          text="Forgot password?"
-        />
-      </div>
-      <div className="text-lg mt-6 w-full flex justify-between items-center">
-        <LinkComponent
-          url={props.urls.signup}
-          text="Don't have an account? Click here"
-        />
-      </div>
-    </>
-  );
+      )
 }

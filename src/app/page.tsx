@@ -1,14 +1,12 @@
+import Footer from "@/components/footer.component";
+import GenericNavigationBar from "@/components/generic-navigation-bar.component";
 
 
 export default async function LandingPage() {
   return (
     <>
-      <nav className="p-10 lg:p-60 lg:pt-10 lg:pb-20 invisible lg:visible">
-        <ul className="flex flex-row justify-between">
-          <li>
-            <a className="text-2xl font-bold text-orange-500" href="#">HawkStatus</a>
-          </li>
-          <li >
+<GenericNavigationBar>
+            <li>
             <ul className="flex flex-row justify-center space-x-8">
               <li>
                 <a href="#features">Features</a>
@@ -17,16 +15,11 @@ export default async function LandingPage() {
                 <a href="#pricing">Pricing</a>
               </li>
               <li>
-                <a href="#">Book a Demo</a>
+                <a href="/book-a-demo">Book a Demo</a>
               </li>
             </ul>
           </li>
-          <li>
-          <a className="p-4" href="#">Sign In</a>
-          <a className="p-4 rounded-lg border bg-blue-500 text-white" href="#">Get started for free</a>
-          </li>
-        </ul>
-      </nav>
+  </GenericNavigationBar>
       <main className="p-10 lg:p-60 lg:pt-10 lg:pb-10 flex lg:flex-row flex-col-reverse">
         <section className="w-1/2 flex flex-col justify-center space-y-8">
         <h1 className="text-4xl lg:text-6xl font-bold">Uptime Observability, like a hawk.</h1>
@@ -57,8 +50,8 @@ export default async function LandingPage() {
           </li>
         </ul>
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-1 lg:space-x-4">
-          <a className="p-4 rounded-lg border bg-blue-500 text-white" href="#">Get started for free</a>
-          <a className="p-4 rounded-lg border border-blue-500 text-blue-500" href="#">Book a Demo</a>
+          <a className="p-4 rounded-lg border bg-blue-500 text-white" href="/signup">Get started for free</a>
+          <a className="p-4 rounded-lg border border-blue-500 text-blue-500" href="/book-a-demo">Book a Demo</a>
         </div>
         <div className="pt-10 flex flex-col justify-evenly space-y-8">
           <p>Trusted by 1,000+ of companies worldwide</p>
@@ -85,7 +78,7 @@ export default async function LandingPage() {
           <p className="text-orange-500 font-bold">Monitoring</p>
           <h1 className="font-bold text-4xl">Real-time Observability</h1>
           <p><span className="font-bold text-orange-500">HawkStatus</span> offers real-time observability, providing you with instant insights into the availability and performance of your online services. With customizable alerts and an intuitive dashboard, <span className="font-bold text-orange-500">HawkStatus</span> enables you to monitor service health with precision and take proactive measures to ensure uninterrupted uptime.</p>
-          <a className="flex flex-row text-blue-500" href="">
+          <a className="flex flex-row text-blue-500" href="/signup">
           <p>Get started for free</p>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 pt-1">
   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -104,7 +97,7 @@ export default async function LandingPage() {
           <p className="text-orange-500 font-bold">Analytics</p>
           <h1 className="font-bold text-4xl">Historical Data</h1>
           <p><span className="font-bold text-orange-500">HawkStatus</span> also provides powerful historical analytics, allowing you to track and analyze service uptime and performance trends over time. With access to historical data, you can identify patterns, pinpoint recurring issues, and make informed decisions to optimize your online presence.</p>
-          <a className="flex flex-row text-blue-500" href="">
+          <a className="flex flex-row text-blue-500" href="/signup">
           <p>Get started for free</p>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 pt-1">
   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -117,7 +110,7 @@ export default async function LandingPage() {
           <p className="text-orange-500 font-bold">Incident alerts</p>
           <h1 className="font-bold text-4xl">Integrations</h1>
           <p><span className="font-bold text-orange-500">HawkStatus</span> offers seamless integrations for incident notifications, allowing you to connect with your preferred communication channels such as email, SMS, Slack, and more. By integrating with these platforms, <span className="font-bold text-orange-500">HawkStatus</span> ensures that you receive timely alerts about service downtime or performance issues, enabling swift response and resolution.</p>
-          <a className="flex flex-row  justify-center text-blue-500" href="">
+          <a className="flex flex-row  justify-center text-blue-500" href="/signup">
           <p>Get started for free</p>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 pt-1">
   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -134,8 +127,8 @@ export default async function LandingPage() {
           Start monitoring with <span className="font-bold text-orange-500">HawkStatus</span> today and experience the peace of mind that comes with reliable uptime monitoring.
           </p>
         <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-1">
-          <a className="p-4 rounded-lg border bg-blue-500 text-white" href="#">Get started for free</a>
-          <a className="p-4 rounded-lg border border-blue-500 text-blue-500" href="#">Book a Demo</a>
+          <a className="p-4 rounded-lg border bg-blue-500 text-white" href="/signup">Get started for free</a>
+          <a className="p-4 rounded-lg border border-blue-500 text-blue-500" href="/book-a-demo">Book a Demo</a>
         </div>
       </section>
       <section id="pricing" className="flex flex-col items-center space-y-8 p-10 lg:p-80 lg:pt-10 lg:pb-10">
@@ -340,58 +333,7 @@ export default async function LandingPage() {
             </div>
           </div>
       </section>
-      <footer className="flex flex-col lg:flex-row justify-evenly p-10 lg:p-60 lg:pt-10 lg:pb-10">
-        <div className="w-full lg:w-1/3 flex flex-col space-y-8">
-          <p>
-            <span className="font-bold text-orange-500">HawkStatus</span> is a comprehensive
-            uptime monitoring tool that provides real-time monitoring, alerting,
-            and performance insights to ensure your services are always
-            available.
-          </p>
-          <div className="flex flex-row justify-start space-x-2">
-          <p>Made with</p>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 pt-1 text-red-500">
-  <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-</svg>
-<p>By <a className="text-blue-500" href="https://twitter.com/brandonkpbailey">@brandonkpbailey</a></p>
-          </div>
-        </div>
-        <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-evenly">
-          <div className="flex flex-col space-y-8">
-            <h3 className="font-bold">Product</h3>
-            <ul className="flex flex-col space-y-4">
-              <li>
-                <a href="#features">Features</a>
-              </li>
-              <li>
-                <a href="#pricing">Pricing</a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col space-y-8">
-            <h3 className="font-bold">Support</h3>
-            <ul className="flex flex-col space-y-4">
-              <li>
-                <a href="/book-a-demo">Book a Demo</a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col space-y-8">
-            <h3 className="font-bold">Company</h3>
-            <ul className="flex flex-col space-y-4">
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-              <li>
-                <a href="/privacy-policy">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="/terms-of-service">Terms of Service</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

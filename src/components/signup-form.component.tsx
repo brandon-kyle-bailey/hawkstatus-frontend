@@ -1,7 +1,6 @@
-"use client";
+'use client';
 import { signIn } from "next-auth/react";
 import { FormEvent } from "react";
-import LinkComponent from "./link.component";
 
 interface SignupCredentials {
   name: string;
@@ -9,16 +8,7 @@ interface SignupCredentials {
   password: string;
   confirmPassword: string;
 }
-
-export default function CredentialsSignupFormComponent(props: {
-  urls: {
-    callback: string;
-    signin: string;
-  };
-  styles: {
-    submit: string;
-  };
-}) {
+export default function SignupFormComponent()  {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const credentials: SignupCredentials = Object.fromEntries(
@@ -26,67 +16,23 @@ export default function CredentialsSignupFormComponent(props: {
     ) as unknown as SignupCredentials;
     signIn("credentials", {
       ...credentials,
-      signup: true,
-      callbackUrl: props.urls.callback,
+      callbackUrl: '/signin',
     });
   };
-  return (
-    <>
-      <p className="text-lg mb-6">Please create your account</p>
-      <form
-        className=" flex flex-col space-y-2"
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <label className="text-base " htmlFor="name">
-          Name
-        </label>
-        <input
-          className="font-thin  border border-neutral-500 h-14 rounded-md p-4"
-          name="name"
-          type="text"
-          aria-label="name"
-          placeholder="Name"
-        />
-        <label className="text-base " htmlFor="email">
-          Email Address
-        </label>
-        <input
-          className="font-thin  border border-neutral-500 h-14 rounded-md p-4"
-          name="email"
-          type="email"
-          aria-label="email address"
-          placeholder="Email address"
-        />
-        <label className="text-base " htmlFor="password">
-          Password
-        </label>
-        <input
-          className="font-thin  border border-neutral-500 h-14 rounded-md p-4"
-          name="password"
-          type="password"
-          aria-label="password"
-          placeholder="Password"
-        />
-        <label className="text-base " htmlFor="confirmPassword">
-          Confirm Password
-        </label>
-        <input
-          className="font-thin  border border-neutral-500 h-14 rounded-md p-4"
-          name="confirmPassword"
-          type="password"
-          aria-label="confirmPassword"
-          placeholder="Confirm Password"
-        />
-        <button className={props.styles.submit} type="submit">
-          Sign up
+
+  return (      
+  <form className="flex flex-col space-y-4 w-1/4" onSubmit={(e) => handleSubmit(e)}>
+        <label htmlFor="name">Name</label>
+        <input className="border rounded-md p-2" type="text" name="name" aria-label="your name" placeholder="John Smith" />
+        <label htmlFor="email">Email Address</label>
+        <input className="border rounded-md p-2" type="email" name="email" aria-label="email address" placeholder="Email Address" />
+        <label htmlFor="password">Password</label>
+        <input className="border rounded-md p-2" type="password" name="password" aria-label="password" placeholder="Password" />
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input className="border rounded-md p-2" type="password" name="confirmPassword" aria-label="confirm password" placeholder="Password" />
+        <button className="bg-blue-500 text-white p-2 rounded-md" type="submit">
+          Register
         </button>
       </form>
-      <div className="text-lg mt-6 w-full flex justify-between items-center">
-        <LinkComponent
-          url={props.urls.signin}
-          text="Already have an account? Click here"
-        />
-      </div>
-    </>
-  );
+      )
 }
