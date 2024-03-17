@@ -28,7 +28,7 @@ export default async function Signin() {
         <Link
         className="text-blue-500 underline hover:no-underline"
         href="/signup">
-          <p>Don't have an account? Click here</p>
+          <p>{"Don't have an account? Click here"}</p>
         </Link>
       </div>
     </main>
