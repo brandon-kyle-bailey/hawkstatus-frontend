@@ -39,10 +39,7 @@ export default async function ApiChecksTableComponent() {
         <caption className="p-5 text-lg font-semibold text-left rtl:text-right bg-gray-50">
           API Checks
           <p className="mt-1 text-sm font-normal">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ut
-            magni tenetur eos consequuntur aut, dolores in voluptate harum
-            possimus similique nemo nihil sequi laborum alias illo, autem
-            quisquam ullam.
+            These are your Service checks. You can create and configure checks from this table.
           </p>
         </caption>
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">

@@ -17,6 +17,7 @@ export default function SignupFormComponent()  {
     signIn("credentials", {
       ...credentials,
       callbackUrl: '/signin',
+      signup: true
     });
   };
 
