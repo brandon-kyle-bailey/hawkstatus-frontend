@@ -8,19 +8,22 @@ import { getServiceCheckResults } from "@/lib/hooks/get-service-check-results.ho
 import { getServiceChecks } from "@/lib/hooks/get-service-checks.hook";
 
 export default async function ApiChecksTableComponent() {
-  const session = await getServerSession(authOptions);
-  if (!session) {
-    redirect("/signin");
-  }
+  // const session = await getServerSession(authOptions);
+  // if (!session) {
+  //   redirect("/signin");
+  // }
 
-  const serviceChecks = await getServiceChecks(session.user?.access_token!);
-  const results = [];
-  for (let i = 0; i < serviceChecks.length; i++) {
-    const check = serviceChecks[i];
-    const incidents = await getIncidents(session.user?.access_token!, check.id);
-    const scResults = await getServiceCheckResults(session.user?.access_token!, check.id);
-    results.push({...check, incidents, results: scResults})
-  }
+  // const serviceChecks = await getServiceChecks(session.user?.access_token!);
+  // const results = [];
+  // for (let i = 0; i < serviceChecks.length; i++) {
+  //   const check = serviceChecks[i];
+  //   const incidents = await getIncidents(session.user?.access_token!, check.id);
+  //   const scResults = await getServiceCheckResults(
+  //     session.user?.access_token!,
+  //     check.id
+  //   );
+  //   results.push({ ...check, incidents, results: scResults });
+  // }
 
   return (
     <div className="relative overflow-x-auto shadow-md rounded-lg">
@@ -33,13 +36,17 @@ export default async function ApiChecksTableComponent() {
             placeholder="Search"
           ></input>
         </div>
-        <CreateApiCheckComponent token={session.user?.access_token!} apiUrl={process.env.API_URL!}/>
+        {/* <CreateApiCheckComponent
+          token={session.user?.access_token!}
+          apiUrl={process.env.API_URL!}
+        /> */}
       </div>
       <table className="w-full text-sm text-left rtl:text-right">
         <caption className="p-5 text-lg font-semibold text-left rtl:text-right bg-gray-50">
           API Checks
           <p className="mt-1 text-sm font-normal">
-            These are your Service checks. You can create and configure checks from this table.
+            These are your Service checks. You can create and configure checks
+            from this table.
           </p>
         </caption>
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -75,9 +82,9 @@ export default async function ApiChecksTableComponent() {
           </tr>
         </thead>
         <tbody>
-          {results.map((check: any) => {
+          {/* {results.map((check: any) => {
             return <ApiCheckRowComponent key={check.id} data={check} />;
-          })}
+          })} */}
         </tbody>
       </table>
     </div>

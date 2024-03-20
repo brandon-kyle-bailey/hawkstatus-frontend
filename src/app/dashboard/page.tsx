@@ -6,10 +6,10 @@ import NavigationTopComponent from "@/components/navigation-top.component";
 import ApiChecksTableComponent from "@/components/api-checks-table.component";
 
 export default async function Dashboard() {
-  const session = await getServerSession(authOptions);
-  if (!session) {
-    redirect("/signin");
-  }
+  // const session = await getServerSession(authOptions);
+  // if (!session) {
+  //   redirect("/signin");
+  // }
   return (
     <main className="flex flex-row justify-evenly text-gray-900">
       <NavigationLeftComponent />
