@@ -48,7 +48,6 @@ export const authOptions: NextAuthOptions = {
         signup: { label: "", type: "boolean" },
       },
       async authorize(credentials, req) {
-        return credentials;
         if (credentials) {
           if (credentials.signup) {
             const createdUser = await fetch(`${process.env.API_URL}/user`, {
