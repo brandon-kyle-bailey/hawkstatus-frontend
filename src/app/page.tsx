@@ -20,7 +20,7 @@ export default async function LandingPage() {
         </li>
       </GenericNavigationBar>
       <main className="p-10 lg:p-60 lg:pt-10 lg:pb-10 flex lg:flex-row flex-col-reverse">
-        <section className="w-1/2 flex flex-col justify-center space-y-8">
+        <section className="w-full lg:w-1/2 flex flex-col justify-center space-y-8">
           <h1 className="text-4xl lg:text-6xl font-bold">
             Uptime Observability, like a hawk.
           </h1>
@@ -102,7 +102,7 @@ export default async function LandingPage() {
           </div>
           <div className="pt-10 flex flex-col justify-evenly space-y-8">
             <p>Trusted by 1,000+ of companies worldwide</p>
-            <div className="flex flex-col space-y-4 invisible">
+            <div className="flex flex-col space-y-4 hidden">
               <div className="flex flex-row space-x-4">
                 <p>Company One</p>
                 <p>Company Two</p>
@@ -116,7 +116,7 @@ export default async function LandingPage() {
             </div>
           </div>
         </section>
-        <section className="w-1/2">
+        <section className="w-full lg:w-1/2">
           <svg
             className="w-full"
             data-name="Layer 1"
@@ -378,7 +378,7 @@ export default async function LandingPage() {
         id="features"
         className="p-10 lg:p-60 lg:pt-10 lg:pb-10 flex flex-col-reverse lg:flex-row"
       >
-        <section className="w-1/2 flex flex-col justify-center space-y-4">
+        <section className="w-full lg:w-1/2 flex flex-col justify-center space-y-4">
           <p className="text-orange-500 font-bold">Monitoring</p>
           <h1 className="font-bold text-4xl">Real-time Observability</h1>
           <p>
@@ -408,7 +408,7 @@ export default async function LandingPage() {
             </svg>
           </a>
         </section>
-        <section className="w-1/2">
+        <section className="w-full lg:w-1/2">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -587,7 +587,7 @@ export default async function LandingPage() {
         </section>
       </section>
       <section className="p-10 lg:p-60 lg:pt-10 lg:pb-10 flex flex-col-reverse lg:flex-row lg:space-x-8">
-        <section className="w-1/2">
+        <section className="w-full lg:w-1/2">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -764,7 +764,7 @@ export default async function LandingPage() {
             />
           </svg>
         </section>
-        <section className="w-1/2 flex flex-col justify-center space-y-4">
+        <section className="w-full lg:w-1/2 flex flex-col justify-center space-y-4">
           <p className="text-orange-500 font-bold">Analytics</p>
           <h1 className="font-bold text-4xl">Historical Data</h1>
           <p>
@@ -795,7 +795,7 @@ export default async function LandingPage() {
         </section>
       </section>
       <section className="p-10 lg:p-60 lg:pt-10 lg:pb-10 flex flex-col items-center">
-        <section className="lg:w-1/2 flex flex-col justify-center text-center lg:space-y-4">
+        <section className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:space-y-4">
           <p className="text-orange-500 font-bold">Incident alerts</p>
           <h1 className="font-bold text-4xl">Integrations</h1>
           <p>
@@ -828,7 +828,7 @@ export default async function LandingPage() {
             </svg>
           </a>
         </section>
-        <section className="w-1/2">
+        <section className="w-full lg:w-1/2">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"

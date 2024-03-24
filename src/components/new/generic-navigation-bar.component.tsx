@@ -2,7 +2,7 @@ export default function GenericNavigationBar(props: {
   children?: React.ReactNode;
 }) {
   return (
-    <nav className="p-10 lg:p-60 lg:pt-10 lg:pb-20 invisible lg:visible">
+    <nav className="p-10 lg:p-60 lg:pt-10 lg:pb-20 hidden lg:block">
       <ul className="flex flex-row justify-between">
         <li>
           <a className="text-2xl font-bold text-orange-500" href="/">
