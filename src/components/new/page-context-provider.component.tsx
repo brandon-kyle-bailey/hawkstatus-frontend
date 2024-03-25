@@ -1,19 +1,18 @@
 import Footer from "@/components/footer.component";
 import NavLeftComponent from "@/components/new/nav-left.component";
 import React from "react";
+import NavTopComponent from "./nav-top.component";
 
 export default async function PageContextProviderComponent(props: {
   breadcrumb: string;
   children?: React.ReactNode;
 }) {
   return (
-    <main className="h-full flex flex-row">
+    <main className="relative flex">
       <NavLeftComponent />
-      <section className="flex flex-col w-full bg-gray-200 space-y-4">
-        <div className="flex flex-col p-10 w-full">
-          <h1 className="text-2xl pb-10">{props.breadcrumb}</h1>
-          {props.children}
-        </div>
+      <section className="h-fill w-full flex flex-col bg-gray-200 space-y-4 p-10">
+        <NavTopComponent breadcrumb={props.breadcrumb} />
+        {props.children}
         <Footer />
       </section>
     </main>

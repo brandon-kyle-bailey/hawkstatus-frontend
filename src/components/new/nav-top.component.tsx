@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-export default function NavTopComponent() {
+export default function NavTopComponent(props: { breadcrumb?: string }) {
   return (
-    <nav className="bg-gray-100 p-5">
+    <nav className="flex flex-row justify-between">
+      <h1 className="text-4xl">{props.breadcrumb}</h1>
       <ul className="flex flex-row flex-wrap justify-end items-center space-x-4">
         <li>
           <a href="/notifications">
@@ -45,17 +46,24 @@ export default function NavTopComponent() {
             </svg>
           </a>
         </li>
-        <a href="/account">
-          <Image
-            src={
-              "https://pbs.twimg.com/profile_images/1720492852336070656/iLs6Fd18_400x400.jpg"
-            }
-            alt={"profile picture"}
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
-        </a>
+        <li>
+          <button className="rounded-md p-2 bg-gray-900 text-white">
+            Sign Out
+          </button>
+        </li>
+        <li>
+          <a href="/account">
+            <Image
+              src={
+                "https://pbs.twimg.com/profile_images/1720492852336070656/iLs6Fd18_400x400.jpg"
+              }
+              alt={"profile picture"}
+              width={50}
+              height={50}
+              className="rounded-full border-2 border-gray-900"
+            />
+          </a>
+        </li>
       </ul>
     </nav>
   );

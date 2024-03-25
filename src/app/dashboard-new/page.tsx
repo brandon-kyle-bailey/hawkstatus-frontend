@@ -3,7 +3,7 @@ import PageContextProviderComponent from "@/components/new/page-context-provider
 
 export default function Dashboard() {
   return (
-    <PageContextProviderComponent breadcrumb={"My Dashboard"}>
+    <PageContextProviderComponent breadcrumb={"Dashboard"}>
       <ApiChecksTableComponent />
     </PageContextProviderComponent>
   );
