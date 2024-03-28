@@ -11,7 +11,7 @@ export default function GenericTableComponent(props: {
           <tr>
             {props.headers.map((row) => {
               return (
-                <th scope="col" className="text-start px-6 py-6">
+                <th key={row} scope="col" className="text-start px-6 py-6">
                   {row}
                 </th>
               );

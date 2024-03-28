@@ -154,7 +154,10 @@ function ApiCheckTableRowComponent(props: {
   const url = props.url.split("/");
   const faviconUrl = url[0] + "//" + url[2];
   return (
-    <tr className="bg-white hover:bg-gray-50 border-b border-t" key={props.id}>
+    <tr
+      className="bg-white hover:bg-gray-50 border-b border-t"
+      key={props.name}
+    >
       <th
         scope="row"
         className="flex flex-row items-center px-6 py-4 text-gray-900 space-x-2"
@@ -262,6 +265,7 @@ export default function ApiChecksTableComponent() {
         {data.map((row) => {
           return (
             <ApiCheckTableRowComponent
+              key={row.id}
               id={row.id}
               name={row.name}
               url={row.url}
