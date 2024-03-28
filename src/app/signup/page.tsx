@@ -15,10 +15,10 @@ export default async function Signup() {
   return (
     <>
       <GenericNavigationBar />
-      <main className="flex flex-col align-middle justify-center items-center">
-        <p className="text-lg">Create a new account</p>
+      <main className="flex flex-col align-middle justify-center items-center lg:w-1/4">
+        <p className="text-xl">Create a new account</p>
         <SignupFormComponent />
-        <div className="w-1/4">
+        <div>
           <Link
             className="text-blue-500 underline hover:no-underline"
             href="/signin"
