@@ -15,10 +15,10 @@ export default async function Signin() {
   return (
     <>
       <GenericNavigationBar />
-      <main className="flex flex-col align-middle justify-center items-center">
-        <p className="text-lg">Please login to you account</p>
+      <main className="flex flex-col align-middle justify-center items-center lg:w-1/4">
+        <p className="text-xl">Please login to you account</p>
         <SigninFormComponent />
-        <div className="lg:w-1/4">
+        <div>
           <Link
             className="text-blue-500 underline hover:no-underline"
             href="/forgot-password"
