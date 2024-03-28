@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SignoutButtonComponent from "./sign-out-button.component";
 
 export default function NavTopComponent(props: { breadcrumb?: string }) {
   return (
@@ -47,9 +48,7 @@ export default function NavTopComponent(props: { breadcrumb?: string }) {
           </a>
         </li>
         <li>
-          <button className="rounded-md p-2 bg-gray-900 text-white">
-            Sign Out
-          </button>
+          <SignoutButtonComponent style="rounded-md p-2 bg-gray-900 text-white" />
         </li>
         <li>
           <a href="/account">
