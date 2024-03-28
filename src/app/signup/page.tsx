@@ -15,7 +15,7 @@ export default async function Signup() {
   return (
     <>
       <GenericNavigationBar />
-      <main className="flex flex-col align-middle justify-center items-center lg:w-1/4">
+      <main className="flex flex-col align-middle justify-center items-center">
         <p className="text-xl">Create a new account</p>
         <SignupFormComponent />
         <div>
